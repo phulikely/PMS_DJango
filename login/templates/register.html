@@ -13,24 +13,11 @@
  
  
       <form action="{% url 'registerrr' %}" method="POST">
+         {% csrf_token %}
          <table>
-            <tr>
-                <td>First Name</td>
-                <td><input id="fname" type="text" name="fname"/> </td>
-             </tr>
-             <tr>
-                <td>Last Name</td>
-                <td><input id="lname" type="text" name="lname"/> </td>
-             </tr>                    
-            <tr>
                <td>User Name</td>
                <td><input id="username" type="text" name="username"/> </td>
             </tr>
-            <tr>
-                <td>Email</td>
-                <td><input id="email" type="email" name="email"/> </td>
-             </tr>            
-            <tr>
                <td>Password</td>
                <td><input id="password" type="password" name="password"/> </td>
             </tr>

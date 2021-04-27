@@ -36,6 +36,7 @@ class User_Role(models.Model):
 
 class User_Detail(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    sex = models.CharField(max_length=6)
     email = models.CharField(max_length=20)
     fullname = models.CharField(max_length=30)
     phone = models.CharField(max_length=10)

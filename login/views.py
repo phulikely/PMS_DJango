@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from login.models import User
+from login.models import User, User_Detail, User_Role, Project, Project_Detail
 
 
 def index(req):
@@ -11,8 +11,9 @@ def login(req):
             user_detail = User.objects.get(username=req.POST['username'], password=req.POST['password'])
             # print(user_detail.__dict__)
             # print(user_detail.username)
+            req.session['user_id'] = user_detail.user_id
             req.session['username'] = user_detail.username
-            # return user_info(req)
+            # context = {'username': 'VietLaTao', 'email':'test_email@gmail.com'}
             return redirect('user_infooo')
         except :
             context = {'msg': 'Invalid email or password!'}
@@ -36,4 +37,26 @@ def register(req):
     return render(req, 'register.html', {})
 
 def user_info(req):
-    return render(req, 'user_info.html', {})
+    username = req.session['username']
+    id = req.session['user_id']
+    user_info = User_Detail.objects.get(user_id=id)
+    #print(user_info.__dict__)
+    email = user_info.email
+    full_name = user_info.fullname
+    phone = user_info.phone
+    dept = user_info.dept
+    address = user_info.address
+    birthday = user_info.birthday
+    joinday = user_info.joinday
+    context = {'username': username, 
+                'email': email,
+                'full_name': full_name,
+                'phone': phone,
+                'dept': dept,
+                'address': address,
+                'birthday': birthday,
+                'joinday': joinday,
+                'id': id
+                }
+    #print(context['username'])
+    return render(req, 'user_info.html', context)

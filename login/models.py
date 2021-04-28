@@ -27,15 +27,7 @@ class User(models.Model):
     user_id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=10)
     password = models.CharField(max_length=15)
-
-
-class User_Role(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     role = models.CharField(max_length=5)
-
-
-class User_Detail(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
     sex = models.CharField(max_length=6)
     email = models.CharField(max_length=20)
     fullname = models.CharField(max_length=30)
@@ -44,7 +36,7 @@ class User_Detail(models.Model):
     address = models.CharField(max_length=15)
     birthday = models.DateField()
     joinday = models.DateField()
-
+    image = models.FilePathField(path="static/img")
 
 class Project(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

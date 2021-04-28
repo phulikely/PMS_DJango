@@ -12,9 +12,10 @@
       <p style="color: red;">{{ msg }}</p>
  
  
-      <form action="{% url 'registerrr' %}" method="POST">
+      <form action="{% url 'registerrr' %}" method="POST" enctype="multipart/form-data">
          {% csrf_token %}
          <table>
+            <tr>
                <td>User Name</td>
                <td><input id="username" type="text" name="username"/> </td>
             </tr>
@@ -24,7 +25,47 @@
             <tr>
                 <td>Confirm Password</td>
                 <td><input id="re-password" type="password" name="re-password"/> </td>
-             </tr>
+            </tr>
+            <tr>
+               <td>Role</td>
+               <td><input id="role" type="text" name="role"/> </td>
+           </tr>
+            <tr>
+               <td>Sex</td>
+               <td><input id="sex" type="text" name="sex"/> </td>
+            </tr>
+            <tr>
+               <td>Email</td>
+               <td><input id="email" type="text" name="email"/> </td>
+            </tr>
+            <tr>
+               <td>Full Name</td>
+               <td><input id="full_name" type="text" name="full_name"/> </td>
+            </tr>
+            <tr>
+               <td>Phone</td>
+               <td><input id="phone" type="text" name="phone"/> </td>
+            </tr>
+            <tr>
+               <td>Department</td>
+               <td><input id="dept" type="text" name="dept"/> </td>
+            </tr>
+            <tr>
+               <td>Address</td>
+               <td><input id="address" type="text" name="address"/> </td>
+            </tr>
+            <tr>
+               <td>Birthday</td>
+               <td><input id="birthday" type="date" name="birthday"/> </td>
+            </tr>
+            <tr>
+               <td>Company Join Day</td>
+               <td><input id="join_day" type="date" name="join_day"/> </td>
+            </tr>
+            <tr>
+               <td>Image</td>
+               <td><input type="file" id="image" name="image"></td>
+            </tr>
             <tr>
                <td colspan ="2">
                   <input type="submit" value= "Sign Up" />

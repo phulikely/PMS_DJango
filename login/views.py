@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from login.models import User, Project, Project_Detail
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 
 def index(req):
@@ -51,6 +53,7 @@ def register(req):
             context = {'msg': 'Something happened. Please check again!'}         
     return render(req, 'register.html', {})
 
+
 def user_info(req):
     username = req.session['username']
     id = req.session['user_id']
@@ -78,3 +81,7 @@ def user_info(req):
                 }
     # #print(context['username'])
     return render(req, 'user_info.html', context)
+
+def logout_view(req):
+    logout(req)
+    return redirect('loginnn')

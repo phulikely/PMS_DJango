@@ -6,9 +6,11 @@
     <title>User Info</title>
 </head>
 <body>
-    {% include "header.html" %}
-    {% include "menu.html" %}
-
+    {% if username != None %}
+      {% include "header.html" %}
+      {% include "menu2.html" %}
+    {% else %}
+    {% endif %}
     <style>
         input.hidden {
             position: absolute;

@@ -5,9 +5,5 @@
     |
     <a href="#">My Account Info</a>
     |
-    {% if username.is_authenticated %}
-        <a href="#">Logout</a>
-    {% else %}
-        <a href="#">Login</a>
-    {% endif %}
+    <a href="{% url 'logouttt' %}">Logout</a>
  </div>

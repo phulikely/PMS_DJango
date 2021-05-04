@@ -1,0 +1,9 @@
+<div style="position:relative; left:800px; padding: 5px;" >
+    <a href="{% url 'indexxx' %}">Home</a>
+    |
+    <a href="#">Projects List</a>
+    |
+    <a href="{% url 'user_infooo' %}">My Account Info</a>
+    |
+    <a href="{% url 'loginnn' %}">Login</a>
+ </div>

@@ -6,11 +6,12 @@
     <title>User Info</title>
 </head>
 <body>
-    {% if username != None %}
-      {% include "header.html" %}
-      {% include "menu2.html" %}
+    {% include "header.html" %}
+    {% include "menu.html" %}
+    <!-- {% if role == 'admin' %}
+      {% include "menu.html" %}
     {% else %}
-    {% endif %}
+    {% endif %} -->
     <style>
         input.hidden {
             position: absolute;
@@ -51,7 +52,7 @@
                     </div>
                   <div class="col-sm-6">
                 <h4 style="color:#00b1b1;">{{ username }}</h4></span>
-                  <span><p>{{ dept }}</p></span>            
+                  <span><p style="text-transform: uppercase;">{{ dept }}</p></span>            
                 </div>
                 <div class="clearfix"></div>
                 <hr style="margin:5px 0 5px 0;">
@@ -78,17 +79,17 @@
       <div class="clearfix"></div>
     <div class="bot-border"></div>
     
-    <div class="col-sm-5 col-xs-6 tital " >Place Of Birth:</div><div class="col-sm-7">{{ address }}</div>
+    <div class="col-sm-5 col-xs-6 tital " >Place Of Birth:</div><div class="col-sm-7" style="text-transform: capitalize;">{{ address }}</div>
     
      <div class="clearfix"></div>
     <div class="bot-border"></div>
     
-    <div class="col-sm-5 col-xs-6 tital " >Sex:</div><div class="col-sm-7">{{ sex }}</div>
+    <div class="col-sm-5 col-xs-6 tital " >Sex:</div><div class="col-sm-7" style="text-transform: capitalize;">{{ sex }}</div>
     
      <div class="clearfix"></div>
     <div class="bot-border"></div>
     
-    <div class="col-sm-5 col-xs-6 tital " >User ID:</div><div class="col-sm-7">{{ id }}</div>
+    <div class="col-sm-5 col-xs-6 tital " >Role:</div><div class="col-sm-7" style="text-transform: capitalize;">{{ role }}</div>
               </div>
             </div>
         </div>

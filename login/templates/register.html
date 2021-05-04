@@ -6,7 +6,7 @@
    </head>
    <body>
         {% include "header.html" %}
-        {% include "menu.html" %}
+        <!-- {% include "menu.html" %} -->
  
       <h3>Register Page</h3>
       <p style="color: red;">{{ msg }}</p>
@@ -17,54 +17,71 @@
          <table>
             <tr>
                <td>User Name</td>
-               <td><input id="username" type="text" name="username"/> </td>
+               <td><input id="username" type="text" name="username" required/> </td>
             </tr>
                <td>Password</td>
-               <td><input id="password" type="password" name="password"/> </td>
+               <td><input id="password" type="password" name="password" required/> </td>
             </tr>
             <tr>
                 <td>Confirm Password</td>
-                <td><input id="re-password" type="password" name="re-password"/> </td>
+                <td><input id="re-password" type="password" name="re-password" required/> </td>
             </tr>
             <tr>
                <td>Role</td>
-               <td><input id="role" type="text" name="role"/> </td>
+               <td>
+                  <select name="role" id="role">
+                     <option value="admin" disabled>Admin</option>
+                     <option value="user">User</option>
+                  </select>
+               </td>
            </tr>
             <tr>
                <td>Sex</td>
-               <td><input id="sex" type="text" name="sex"/> </td>
+               <td>
+                  <select name="sex" id="sex">
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
+                     <option value="other">Other</option>
+                  </select>
+               </td>
             </tr>
             <tr>
                <td>Email</td>
-               <td><input id="email" type="text" name="email"/> </td>
+               <td><input id="email" type="text" name="email" required/> </td>
             </tr>
             <tr>
                <td>Full Name</td>
-               <td><input id="full_name" type="text" name="full_name"/> </td>
+               <td><input id="full_name" type="text" name="full_name" required/> </td>
             </tr>
             <tr>
                <td>Phone</td>
-               <td><input id="phone" type="text" name="phone"/> </td>
+               <td><input id="phone" type="text" name="phone" required/> </td>
             </tr>
             <tr>
                <td>Department</td>
-               <td><input id="dept" type="text" name="dept"/> </td>
+               <td>
+                  <select name="dept" id="dept">
+                     <option value="c10">C10</option>
+                     <option value="c11">C11</option>
+                     <option value="c12">C12</option>
+                  </select>
+               </td>
             </tr>
             <tr>
                <td>Address</td>
-               <td><input id="address" type="text" name="address"/> </td>
+               <td><input id="address" type="text" name="address" required/> </td>
             </tr>
             <tr>
                <td>Birthday</td>
-               <td><input id="birthday" type="date" name="birthday"/> </td>
+               <td><input id="birthday" type="date" name="birthday" required/> </td>
             </tr>
             <tr>
                <td>Company Join Day</td>
-               <td><input id="join_day" type="date" name="join_day"/> </td>
+               <td><input id="join_day" type="date" name="join_day" required/> </td>
             </tr>
             <tr>
                <td>Image</td>
-               <td><input type="file" id="image" name="image"></td>
+               <td><input type="file" id="image" name="image" required></td>
             </tr>
             <tr>
                <td colspan ="2">

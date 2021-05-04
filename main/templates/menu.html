@@ -1,13 +1,13 @@
 <div style="position:relative; left:800px; padding: 5px;" >
-    <a href="#">Home</a>
+    <a href="#">Update</a>
     |
-    <a href="#">Projects List</a>
+    <a href="{% url 'project_index' %}">Projects List</a>
     |
-    <a href="#">My Account Info</a>
+    <a href="{% url 'user_infooo' %}">My Account Info</a>
     |
-    {% if username.is_authenticated %}
-        <a href="#">Logout</a>
+    {% if user.is_authenticated %}
+    <a href="{% url 'loginnn' %}">Login</a>
     {% else %}
-        <a href="#">Login</a>
+    <a href="{% url 'logouttt' %}">Logout</a>
     {% endif %}
  </div>

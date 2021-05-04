@@ -66,6 +66,7 @@ def user_info(req):
     birthday = user_info.birthday
     joinday = user_info.joinday
     sex = user_info.sex
+    role = user_info.role
     image = user_info.image
     context = {'username': username, 
                 'email': email,
@@ -77,9 +78,10 @@ def user_info(req):
                 'joinday': joinday,
                 'id': id,
                 'sex': sex,
+                'role': role,
                 'image': image,
                 }
-    # #print(context['username'])
+    print(context['role'])
     return render(req, 'user_info.html', context)
 
 def logout_view(req):

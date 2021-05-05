@@ -8,8 +8,7 @@ def project_index(req):
         'projects': projects
     }
 
-    #return render(req, 'project_index.html', context)
-    return ('This is project Index Page')
+    return render(req, 'project_index.html', context)
 
 def project_detail(req, pk):
     project = Project.objects.get(pk=pk)
